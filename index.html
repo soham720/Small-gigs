@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore More</title>
+
+    <!-- Google se font uthaya hai -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fira Sans', sans-serif; 
+            background-color: #d4b89a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background-color: #5c4033;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .tab {
+            background-color: #7b5843;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 15px;
+            font-size: 18px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .navbar .home-button {
+            background-color: #a5744b;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .home-button:hover {
+            background-color: #8c5037;
+        }
+
+        .image-dabba_ka_dabba {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 350px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .image-dabba {
+            position: relative;
+            width: 300px;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-dabba img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bru_more-button {
+            display: none;
+        }
+
+        .text-panel {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: calc(100% - 320px);
+            background: transparent;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            align-items: flex-start; 
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .text-panel.left {
+            right: 0;
+            transform: translateX(-100%);
+        }
+
+        .text-panel.right {
+            left: 0;
+            transform: translateX(100%);
+        }
+
+        .text-panel h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        .text-panel h3 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .text-panel ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .text-panel .feature-ingredients {
+            display: flex;
+            gap: 30px; 
+        }
+
+        .more-button-label {
+            position: absolute;
+            bottom: 10px;
+            background-color: #7b5843;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .more-button-label:hover {
+            background-color: #5c4033;
+        }
+
+        .image-dabba_ka_dabba input:checked + .image-dabba + .text-panel {
+            transform: translateX(0);
+            opacity: 1; 
+        }
+
+        .image-dabba_ka_dabba.right-side {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <button class="home-button">Home</button>
+        <div class="tab">Explore</div>
+    </div>
+
+    <!-- Image 1 -->
+    <div class="image-dabba_ka_dabba">
+        <input type="checkbox" class="bru_more-button" id="image1">
+        <div class="image-dabba">
+            <img src="/Coffee1.jpg" alt="Image 1">
+        </div>
+        <div class="text-panel left">
+            <h2><pre> 
+ Pal Pal Pineapple 50 gms
+ Premium Instant Coffee | Limited Edition
+ Rs. 499.00</pre></h2>
+            
+            <div class="feature-ingredients">
+                <div>
+                    <pre><h3> Key Features</h3></pre>
+                    <ul>
+                        <li>Keto-Friendly</li>
+                        <li>Gluten-Free and Vegan</li>
+                        <li>No Artificial Additives</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3> Ingredients</h3>
+                    <ul>
+                        <li>Instant Coffee</li>
+                        <li>Pineapple Flavoring</li>
+                        <li>Natural Sweeteners</li>
+                    </ul></pre>
+                </div>
+            </div>
+        </div>
+        <label for="image1" class="more-button-label">Bru More</label>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="image-dabba_ka_dabba right-side">
+        <input type="checkbox" class="bru_more-button" id="image2">
+        <div class="image-dabba">
+            <img src="/coffee2.jpg" alt="Image 2">
+        </div>
+        <div class="text-panel right">
+            <h2><pre> 
+ Coffee Bliss 200 gms
+ Premium Arabica Blend | Smooth & Rich
+ Rs. 1848.00</pre></h2>
+            
+            <div class="feature-ingredients">
+                <div>
+                    <h3><pre> Key Features</pre></h3>
+                    <ul>
+                        <li>High-Quality Arabica Beans</li>
+                        <li>Rich and Smooth Flavor</li>
+                        <li>Rich in Antioxidants</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>Arabica Coffee Beans</li>
+                        <li>Natural Flavorings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <label for="image2" class="more-button-label">Bru More</label>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="image-dabba_ka_dabba">
+        <input type="checkbox" class="bru_more-button" id="image3">
+        <div class="image-dabba">
+            <img src="/coffee3.jpg" alt="Image 3">
+        </div>
+        <div class="text-panel left">
+            <h2><pre> 
+ Espresso Perfection 100 gms
+ Bold Espresso Blend | Dark Roasted
+ Rs. 429.00</pre></h2>
+            
+            <div class="feature-ingredients">
+                <div>
+                    <h3><pre> Key Features</pre></h3>
+                    <ul>
+                        <li>Single Origin Coffee</li>
+                        <li>Perfect for Espresso</li>
+                        <li>Strong Aroma</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>Espresso Beans</li>
+                        <li>Natural Flavorings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <label for="image3" class="more-button-label">Bru More</label>
+    </div>
+
+    <!-- Image 4 -->
+    <div class="image-dabba_ka_dabba right-side">
+        <input type="checkbox" class="bru_more-button" id="image4">
+        <div class="image-dabba">
+            <img src="/coffee4.jpg" alt="Image 4">
+        </div>
+        <div class="text-panel right">
+            <h2><pre> 
+ Morning Brew 250 gms
+ Bold Arabica Coffee | Medium Roasted
+ Rs. 949.00</pre></h2>
+            
+            <div class="feature-ingredients">
+                <div>
+                    <h3><pre> Key Features</pre></h3>
+                    <ul>
+                        <li>Bold and Robust Flavor</li>
+                        <li>Ground for Easy Use</li>
+                        <li>Contains 100% Arabica Coffee</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>Arabica Coffee</li>
+                        <li>Natural Sweeteners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <label for="image4" class="more-button-label">Bru More</label>
+    </div>
+
+    <!-- Image 5 -->
+    <div class="image-dabba_ka_dabba">
+        <input type="checkbox" class="bru_more-button" id="image5">
+        <div class="image-dabba">
+            <img src="/coffee5.jpg" alt="Image 5">
+        </div>
+        <div class="text-panel left">
+            <h2><pre> 
+ Latte Fusion 300 gms
+ Creamy Coffee Blend | For Lattes
+ Rs. 959.00</pre></h2>
+            
+            <div class="feature-ingredients">
+                <div>
+                    <h3><pre> Key Features</pre></h3>
+                    <ul>
+                        <li>Rich and Creamy Texture</li>
+                        <li>Perfect for Lattes</li>
+                        <li>No Added Sugar</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>Arabica Coffee</li>
+                        <li>Non-Dairy Creamer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <label for="image5" class="more-button-label">Bru More</label>
+    </div>
+
+</body>
+</html>
